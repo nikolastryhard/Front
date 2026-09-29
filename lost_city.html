@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lost City</title>
+<link rel="stylesheet" href="lost_city.css">
+</head>
+<body>
+<div class="scr on" id="auth">
+  <h1>LOST CITY</h1>
+  <p class="sub">Sobreviva 30 dias na cidade esquecida.</p>
+  <div class="card">
+    <input id="em" type="email" placeholder="E-mail" autocomplete="email">
+    <input id="nk" placeholder="Nickname (só no cadastro)" autocomplete="nickname">
+    <input id="pw" type="password" placeholder="Senha (mín. 6 caracteres)" autocomplete="current-password">
+    <div class="err" id="er"></div>
+    <button id="bLogin">Entrar</button>
+    <button class="g" id="bReg">Cadastrar</button>
+  </div>
+</div>
+
+<div class="scr" id="menu">
+  <h1>LOST CITY</h1>
+  <div class="card" id="mn"></div>
+</div>
+
+<div class="scr" id="mp">
+  <h1>MULTIPLAYER</h1>
+  <div class="card">
+    <div id="mpa"><button id="mpC">Criar partida</button><input id="mpc" placeholder="Código da partida" maxlength="5" autocapitalize="characters"><button class="g" id="mpJ">Entrar em partida</button></div>
+    <div id="mpl" style="display:none"><small>Código da partida</small><b class="hi" id="mpk"></b><div id="mpu"></div>
+      <button id="mpI">Convidar amigos</button><button id="mpG">Iniciar partida</button><small id="mpw">Aguardando o host iniciar…</small><button class="g" id="mpX">Sair da partida</button></div>
+    <div class="err" id="mpe"></div>
+    <button class="g" id="mpB">Voltar</button>
+  </div>
+</div>
+
+<div class="scr" id="cfg">
+  <h1>CONFIGURAÇÕES</h1>
+  <div class="card">
+    <label>Volume <input id="cv1" type="range" min="0" max="1" step=".05"></label>
+    <label>Sensibilidade dos controles <input id="cv2" type="range" min=".6" max="1.6" step=".1"></label>
+    <label>Resolução
+      <select id="cv3">
+        <option value="640">640×400</option>
+        <option value="800">800×500</option>
+        <option value="960">960×600</option>
+      </select>
+    </label>
+    <button id="bSave">Salvar</button>
+    <button class="g" id="bBack">Voltar</button>
+  </div>
+</div>
+
+<div class="scr" id="game">
+  <div id="wrap">
+    <canvas id="cv"></canvas>
+    <div id="hud">
+      <div class="st" id="sh"><span>Vida</span><div class="b"><i id="bh"></i></div></div>
+      <div class="st" id="sf"><span>Fome</span><div class="b"><i id="bf"></i></div></div>
+      <div class="st" id="ss"><span>Sede</span><div class="b"><i id="bs"></i></div></div>
+      <div id="wp"></div>
+    </div>
+    <div id="day"></div>
+    <div id="hint"></div>
+    <div id="pls"><span id="plt"></span><button class="g" id="plx">Sair da partida</button></div>
+    <canvas id="mm" width="210" height="150" title="Mapa (M)" aria-label="Minimapa"></canvas>
+    <div id="inv"></div>
+    <div id="end"></div>
+  </div>
+  <div id="touch">
+    <div id="joy"><div id="knob"></div></div>
+    <div class="tb">
+      <button id="tE">Coletar</button>
+      <button id="tA">Atacar</button>
+      <button class="g" id="tR">Recarregar</button>
+      <button class="g" id="tI">Mochila</button>
+      <button class="g" id="tP">Pausa</button>
+    </div>
+  </div>
+  <small id="keys">WASD/setas mover · E coletar · I mochila · 1 comida · 2 água · 3 ferramenta · 4 kit médico · botão esquerdo do mouse atacar · R recarregar · Q trocar arma · P pausa · M mapa</small>
+</div>
+<script src="lost_city.js"></script>
+<script src="multiplayer.js"></script>
+</body>
+</html>
